@@ -1,0 +1,11 @@
+﻿Compilación iniciada a las 22/10/2015 10:28:41.
+     1>Proyecto "C:\Users\pastorse.ESAT.000\Desktop\proyecto\_engine\PastorseEngineProject.vcxproj" en el nodo 2 (Build destinos).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\_lib\PastorseEngineProject.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\_lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"..\_lib\PastorseEngineProject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\_lib\PastorseEngineProject.lib" /MACHINE:X86 C:\Users\pastorse.ESAT.000\Desktop\proyecto\_lib\glfw.lib
+         C:\Users\pastorse.ESAT.000\Desktop\proyecto\_lib\glew.lib
+     1>LINK : fatal error LNK1104: no se puede abrir el archivo 'C:\Users\pastorse.ESAT.000\Desktop\proyecto\_lib\glew.lib'
+     1>Compilación del proyecto terminada "C:\Users\pastorse.ESAT.000\Desktop\proyecto\_engine\PastorseEngineProject.vcxproj" (Build destinos) -- ERROR.
+
+ERROR al compilar.
+
+Tiempo transcurrido 00:00:01.32

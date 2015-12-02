@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PastorseEngineProject", "PastorseEngineProject.vcxproj", "{830F8F59-EF7B-4A54-B86F-E2B1249B6CBC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "deps", "deps.vcxproj", "{F1A1957C-DDD8-960D-86C5-7C1072DB120F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{830F8F59-EF7B-4A54-B86F-E2B1249B6CBC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{830F8F59-EF7B-4A54-B86F-E2B1249B6CBC}.Debug|Win32.Build.0 = Debug|Win32
+		{830F8F59-EF7B-4A54-B86F-E2B1249B6CBC}.Release|Win32.ActiveCfg = Release|Win32
+		{830F8F59-EF7B-4A54-B86F-E2B1249B6CBC}.Release|Win32.Build.0 = Release|Win32
+		{F1A1957C-DDD8-960D-86C5-7C1072DB120F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F1A1957C-DDD8-960D-86C5-7C1072DB120F}.Debug|Win32.Build.0 = Debug|Win32
+		{F1A1957C-DDD8-960D-86C5-7C1072DB120F}.Release|Win32.ActiveCfg = Release|Win32
+		{F1A1957C-DDD8-960D-86C5-7C1072DB120F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal

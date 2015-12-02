@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="_dependencies">
+      <UniqueIdentifier>{0BC53CE1-7785-B817-40C0-0195AC3FFDF3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_dependencies\glew">
+      <UniqueIdentifier>{36C663AF-22AA-2405-8B0A-1F58770D0F87}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\_dependencies\glew\include">
+      <Filter>_dependencies\glew</Filter>
+    </None>
+    <None Include="..\_dependencies\glew\src">
+      <Filter>_dependencies\glew</Filter>
+    </None>
+  </ItemGroup>
+</Project>
