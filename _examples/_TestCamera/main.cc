@@ -12,6 +12,8 @@
 #include <thread>
 #include <memory>
 #include <iostream>
+#include "tiny_obj_loader.h"
+#include <vector>
 
 #define CREATE_UNIQUE_PTR(var1) std::unique_ptr<var1>(new var1());
 
@@ -32,9 +34,22 @@ struct PastorseEngine{
 	PastorseGPU* GPUInstance = nullptr;
 }engine;
 
+void loadOBJ(char* filename = nullptr, PastorseMaterial* material = nullptr, 
+  PastorseGeometry* geometry = nullptr){
+  std::vector<tinyobj::material_t> mat;
+  std::vector<tinyobj::shape_t> geo;
+  std::string error;
+
+  if (!tinyobj::LoadObj(geo, mat, error, "../_assets/plane.obj")){
+    printf("error");
+  }
+}
 
 int main(int argc, const char* argv[])
 {
+
+  loadOBJ();
+
   float a = 0.0f;
 	engine.GPUInstance = PastorseGPU::getInstance();
 	engine.geometry = std::make_shared<PastorseGeometry>();
@@ -56,7 +71,7 @@ int main(int argc, const char* argv[])
 	engine.geometry->create_cube("cube1", 1.0f);
 	engine.geometry2->create_cube("cube2", 0.5f);
 	engine.material->upload_texture("../_assets/texture4.jpg");
-  engine.material2->upload_texture("../_assets/texture2.jpg");
+  engine.material2->upload_texture("../_assets/texture2.png");
 
 	engine.actor->set_geometry(engine.geometry);
 	engine.actor->set_material(engine.material);
@@ -67,7 +82,7 @@ int main(int argc, const char* argv[])
 	engine.material->set_color(glm::vec3(0.5f, 0.0f, 0.0f));
   engine.material2->set_color(glm::vec3(0.0f, 0.0f, 0.5f));
 
-	engine.actor2->add_child(engine.actor);
+	engine.actor->add_child(engine.actor2);
 
 	while (!engine.window.is_closed_window())
 	{
@@ -81,7 +96,7 @@ int main(int argc, const char* argv[])
     engine.actor->set_rotation(0.0f, 0.0f, 1.0f, sin(a));
     //engine.actor->set_scale(sin(a), sin(a), sin(a));
 
-    engine.actor2->set_position(sin(a), 0.0f, 0.0f);
+    engine.actor2->set_position(sin(a)*2, 0.0f, 0.0f);
 
 		engine.actor->draw();
 		engine.actor2->draw();

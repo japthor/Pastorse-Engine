@@ -24,6 +24,17 @@ public:
   glm::mat4 get_world() const;
   glm::mat4 get_model() const;
   std::vector<std::shared_ptr<PastorseNode>> get_children() const;
+
+  glm::mat4 get_rotation();
+  void set_rotation(glm::mat4 rotation);
+
+  glm::mat4 get_scale();
+  void set_scale(glm::mat4 scale);
+
+  glm::mat4 get_translation();
+  void set_translation(glm::mat4 translation);
+
+
 protected:
 	
   
@@ -39,6 +50,10 @@ private:
 
 	std::vector<std::shared_ptr<PastorseNode>> node_children_;
 	std::weak_ptr<PastorseNode> node_parent_;
+
+  glm::mat4 rotation_;
+  glm::mat4 scale_;
+  glm::mat4 translation_;
 
 	glm::mat4 model_;
 	glm::mat4 world_;

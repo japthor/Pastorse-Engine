@@ -31,12 +31,15 @@ void PastorseActor::visitNode(std::shared_ptr<PastorseNode> node){
 }
 
 void PastorseActor::updateNode(std::shared_ptr<PastorseNode> node){
+  glm::mat4 model;
+  model = get_translation() * get_rotation() * get_scale();
+
   if (get_parent().expired()){
-    set_world(get_model());
+    set_world(model);
   }
   else{
     std::shared_ptr<PastorseNode> parent = get_parent().lock();
-    set_world(get_model() * parent->get_world());
+    set_world(model * parent->get_world());
   }
 }
 
