@@ -1,12 +1,10 @@
 #ifndef INCLUDE_PASTORSENODE_H_
 #define INCLUDE_PASTORSENODE_H_ 1
 
-#include <string> 
 #include <vector>
 #include <memory>
 #include "PastorseTypes.h"
 #include "gtc\matrix_transform.hpp"
-#include "gtc\type_ptr.hpp"
 
 class PastorseNode : std::enable_shared_from_this<PastorseNode>
 {
@@ -14,49 +12,113 @@ public:
 	PastorseNode();
 	~PastorseNode(){};
 
-	void add_child(std::shared_ptr<PastorseNode> node_child);
+  /**
+  * Creates a Child
+  *
+  * @param node_child The actor you want to make child.
+  */
+  void addChild(std::shared_ptr<PastorseNode> node_child);
 
-	void set_position(float32 x, float32 y, float32 z);
-	void set_rotation(float32 x, float32 y, float32 z, float32 angle);
-	void set_scale(float32 x, float32 y, float32 z);
-	std::shared_ptr<PastorseNode> returnMyself() { return shared_from_this(); }
+  /**
+  * Sets the node Position
+  *
+  * @param x X.
+  * @param y Y.
+  * @param z Z.
+  */
+  void setPosition(float32 x, float32 y, float32 z);
 
-  glm::mat4 get_world() const;
-  glm::mat4 get_model() const;
-  std::vector<std::shared_ptr<PastorseNode>> get_children() const;
+  /// Gets the node Position.
+  glm::vec3 getPosition();
 
-  glm::mat4 get_rotation();
-  void set_rotation(glm::mat4 rotation);
 
-  glm::mat4 get_scale();
-  void set_scale(glm::mat4 scale);
+  /**
+  * Sets the node Rotation
+  *
+  * @param x X.
+  * @param y Y.
+  * @param z Z.
+  * @param angle angle.
+  */
+  void setRotation(float32 x, float32 y, float32 z, float32 angle);
+  /// Gets the node Rotation.
+  glm::vec3 getRotation();
 
-  glm::mat4 get_translation();
-  void set_translation(glm::mat4 translation);
+  /**
+  * Sets the node Scale
+  *
+  * @param x X.
+  * @param y Y.
+  * @param z Z.
+  */
+  void setScale(float32 x, float32 y, float32 z);
+  /// Gets the node Scale.
+  glm::vec3 getScale();
+
+  /// Gets the Rotation Matrix.
+  glm::mat4 getRotationMatrix();
+
+  /**
+  * Sets the rotation matrix
+  *
+  * @param rotation Rotation Matrix.
+  */
+  void setRotationMatrix(glm::mat4 rotation);
+  /// Gets the Scale Matrix.
+  glm::mat4 getScaleMatrix();
+
+  /**
+  * Sets the scale matrix
+  *
+  * @param scale scale Matrix.
+  */
+  void setScaleMatrix(glm::mat4 scale);
+  /// Gets the Translation Matrix.
+  glm::mat4 getTranslationMatrix();
+
+  /**
+  * Sets the translation matrix
+  *
+  * @param translation translation Matrix.
+  */
+  void setTranslationMatrix(glm::mat4 translation);
+
+  /// Sets the Parent
+  std::shared_ptr<PastorseNode> returnMyself() { return shared_from_this(); }
+
+  /// Children's Vector.
+  std::vector<std::shared_ptr<PastorseNode>> getChildren() const;
+
+  /// Gets the Model
+  glm::mat4 getModel() const;
+  /// Gets the World
+  glm::mat4 getWorld() const;
 
 
 protected:
-	
-  
-  void set_world(glm::mat4 world);
+  void setWorld(glm::mat4 world);
 
-  std::weak_ptr<PastorseNode> get_parent();
+  std::weak_ptr<PastorseNode> getParent();
 
   virtual void visitNode(std::shared_ptr<PastorseNode> node) = 0;
   virtual void updateNode(std::shared_ptr<PastorseNode> node) = 0;
 
 private:
-	void set_parent(std::weak_ptr<PastorseNode> node_parent);
+	void setParent(std::weak_ptr<PastorseNode> node_parent);
 
 	std::vector<std::shared_ptr<PastorseNode>> node_children_;
 	std::weak_ptr<PastorseNode> node_parent_;
 
-  glm::mat4 rotation_;
-  glm::mat4 scale_;
-  glm::mat4 translation_;
+	glm::mat4 rotation_matrix_;
+	glm::mat4 scale_matrix_;
+	glm::mat4 translation_matrix;
 
 	glm::mat4 model_;
 	glm::mat4 world_;
+
+	glm::vec3 position_;
+	glm::vec3 rotation_;
+	glm::vec3 scale_;
 };
 
 

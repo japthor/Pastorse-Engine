@@ -8,35 +8,42 @@ PastorseMaterial::PastorseMaterial(){
 	texture_ = 0;
 }
 
-void PastorseMaterial::create_material(){
+void PastorseMaterial::initMaterial(){
 	PastorseGPU* GPUInstance = nullptr;
 	GPUInstance = PastorseGPU::getInstance();
 
 	GPUInstance->init();
 }
 
-glm::vec3 PastorseMaterial::get_color(){
+glm::vec3 PastorseMaterial::getColor(){
 	return color_;
 }
 
-void PastorseMaterial::set_color(glm::vec3 color){
+void PastorseMaterial::setColor(glm::vec3 color){
 	color_ = color;
 }
 
-void PastorseMaterial::upload_texture(const char8* location){
+void PastorseMaterial::setColor(float r, float g, float b){
+	color_.r = r;
+	color_.g = g;
+	color_.b = b;
+}
+
+void PastorseMaterial::uploadTexture(const char8* location){
 	PastorseGPU* GPUInstance = nullptr;
 	GPUInstance = PastorseGPU::getInstance();
 
-	GPUInstance->upload_texture_prueba(location, &texture_);
+	GPUInstance->uploadTexture(location, &texture_);
 }
 
-void PastorseMaterial::prepare_draw(){
+void PastorseMaterial::draw(){
 	PastorseGPU* GPUInstance = nullptr;
 	GPUInstance = PastorseGPU::getInstance();
 
-	GPUInstance->set_color(color_);
-	GPUInstance->set_texture(&texture_);
+	GPUInstance->setColor(color_);
+	GPUInstance->setTexture(&texture_);
 }
+
 
 
 

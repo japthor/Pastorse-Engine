@@ -1,12 +1,8 @@
 #ifndef INCLUDE_PASTORSEMATERIAL_H_
 #define INCLUDE_PASTORSEMATERIAL_H_ 1
 
-#include <string> 
 #include "PastorseGPU.h"
 #include "glm.hpp"
-#include "tiny_obj_loader.h"
-
-
 
 class PastorseMaterial
 {
@@ -14,14 +10,37 @@ public:
 	PastorseMaterial();
 	~PastorseMaterial(){};
 
-	void create_material();
-	glm::vec3 get_color();
+	/// Creates the Shader
+	void initMaterial();
 
-	void set_color(glm::vec3 color);
+	/// Gets the Material Color
+	glm::vec3 getColor();
 
-	void upload_texture(const char8* location);
+	/**
+	* Sets the material color
+	*
+	* @param color Color vector
+	*/
+	void setColor(glm::vec3 color);
 
-	void prepare_draw();
+	/**
+	* Sets the material color
+	*
+	* @param r R
+	* @param g G
+	* @param b B
+	*/
+	void setColor(float r, float g, float b);
+
+	/**
+	* Gives to the Material a Texture.
+	*
+	* @param location location of the texture.
+	*/
+	void uploadTexture(const char8* location);
+
+	/// Sets the Color and the Texure in the GPU (Don't use it)
+	void draw();
 
 private:
 	glm::vec3 color_;

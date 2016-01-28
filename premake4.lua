@@ -42,6 +42,17 @@ project "_examples_IntelligentPointers"
 kind "ConsoleApp"
 files{"_examples/_IntelligentPointers/**.cc"}
 links{ "opengl32","deps", "platform_Win32", "PastorseEngineProject"}
+
+
+project "_examples_Engine"
+kind "ConsoleApp"
+files{"_examples/_Engine/**.cc"}
+links{ "opengl32","deps", "platform_Win32", "PastorseEngineProject"}
+
+project "_examples_Scene_Engine"
+kind "ConsoleApp"
+files{"_examples/_Scene_Engine/**.cc"}
+links{ "opengl32","deps", "platform_Win32", "PastorseEngineProject"}
   
 project "PastorseEngineProject"
 kind "StaticLib"

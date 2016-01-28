@@ -10,19 +10,22 @@ public:
 
 	PastorseInput();
 	~PastorseInput(){};
-		
-	void key_input(GLFWwindow* window);
+	
+	/// Inits the Input
+	void keyInput(GLFWwindow* window);
 
-	float32 get_x();
-	void set_x(float32 x);
-
-	float32 get_y();
-	void set_y(float32 y);
-
-	float32 get_z();
-	void set_z(float32 z);
-
-	void set_key_input(GLFWwindow* window, void *a);
+	/// Get's X
+	float32 getX();
+	/// Set's X
+	void setX(float32 x);
+	/// Get's Y
+	float32 getY();
+	/// Set's Y
+	void setY(float32 y);
+	/// Get's Z
+	float32 getZ();
+	/// Set's Z
+	void setZ(float32 z);
 
 private:
 	float32 x_;

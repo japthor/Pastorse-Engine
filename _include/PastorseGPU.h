@@ -5,8 +5,10 @@
 #include "gtc\type_ptr.hpp"
 #include "glm.hpp"
 #include "GL\glew.h"
-#include "GLFW\glfw3.h"
 #include "PastorseTypes.h"
+
+#include "tiny_obj_loader.h"
+#include <vector>
 
 
 class PastorseGPU
@@ -15,38 +17,47 @@ public:
 	~PastorseGPU(){};
 	static PastorseGPU* getInstance();
 
+	/// Inits the GPU shaders
 	void init();
-	void close_buffer();
+	/// Close Buffers
+	void closeBuffer();
 
-	void create_cube(float32 scale, uint32 *vao, uint32 *vbo, uint32 *ebo);
-	void create_plane(float32 scale, uint32 *vao, uint32 *vbo, uint32 *ebo, float32 x, float32 y, float32 z);
+	/// Creates a cube 
+	void createCube(float32 scale, uint32 *vao, uint32 *vbo_vertices_, uint32 *vbo_normales_, uint32 *vbo_UV_, uint32 *ebo, uint32 *index_);
 
-	void attrib_pointer();
-	void transform_draw();
+	/// Creates a Plane (Not working)
+	void createPlane(float32 scale, uint32 *vao, uint32 *vbo_vertices_, uint32 *vbo_normales_, uint32 *vbo_UV_, uint32 *ebo, float32 x, float32 y, float32 z);
 
-	void upload_texture();
-	void use_texture();
+	/// Upload the Texture
+	void atrributePointer(uint32 *vbo_vertices_, uint32 *vbo_normales_, uint32 *vbo_UV_);
 
-	void upload_texture_prueba(const char8* location, uint32* texture);
-	void set_texture(uint32* texture);
-
+	/// Upload the Texture
+	void uploadTexture(const char8* location, uint32* texture);
+	/// Sets the Shader texture
+	void setTexture(uint32* texture);
+	/// Gets the Program
 	uint32 get_program();
 
-	void draw(uint32 *vao, uint32* ebo, uint32* vbo);
-	void set_color(glm::vec3 color);
+	/// Calls to draw 
+	void draw(uint32 *vao, uint32* ebo, uint32 *vbo_vertices_, uint32 *vbo_normales_, uint32 *vbo_UV_, uint32 *index);
 
-	void delete_buffers();
+	/// Deletes the Buffers
+	void setColor(glm::vec3 color);
+
+	/// Deletes the Buffers
+	void delete_buffers(uint32 *vao, uint32 *vbo_vertices_, uint32 *vbo_normales_, uint32 *vbo_UV_, uint32 *ebo);
+	/// Deletes the shader
 	void delete_shader_program();
 
-  void set_transformation_to_draw(glm::mat4 model);
+	/// Sets the model transofrmation matrix
+    void setTransformation(glm::mat4 model);
+
+	/// Creates the OBJ
+	void loadOBJ(uint32 *vao, uint32 *vbo_vertices_, uint32 *vbo_normales_, uint32 *vbo_UV_, uint32 *ebo, uint32 *index, void* shapes);
 
 
 private:
 	PastorseGPU();
-
-	GLuint vao_;
-	GLuint vbo_;
-	GLuint ebo_;
 
 	GLuint vertex_shader_;
 	GLuint fragment_shader_;
@@ -61,6 +72,7 @@ private:
 	GLint projection_location_;
 
 	GLuint texture_;
+
 
 
 };

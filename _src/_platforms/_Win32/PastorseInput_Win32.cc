@@ -7,7 +7,7 @@ PastorseInput::PastorseInput(){
 	z_ = 10.0f;
 }
 
-void PastorseInput::key_input(GLFWwindow* window){
+void PastorseInput::keyInput(GLFWwindow* window){
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS){
 		y_ += 0.1f;
 	}
@@ -34,27 +34,27 @@ void PastorseInput::key_input(GLFWwindow* window){
 
 }
 
-float32 PastorseInput::get_x(){
+float32 PastorseInput::getX(){
 	return x_;
 }
 
-void PastorseInput::set_x(float32 x){
+void PastorseInput::setX(float32 x){
 	x_ = x;
 }
 
-float32 PastorseInput::get_y(){
+float32 PastorseInput::getY(){
 	return y_;
 }
 
-void PastorseInput::set_y(float32 y){
+void PastorseInput::setY(float32 y){
 	y_ = y;
 }
 
-float32 PastorseInput::get_z(){
+float32 PastorseInput::getZ(){
 	return z_;
 }
 
-void PastorseInput::set_z(float32 z){
+void PastorseInput::setZ(float32 z){
 	z_ = z;
 }
 

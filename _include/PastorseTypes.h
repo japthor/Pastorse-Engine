@@ -1,9 +1,12 @@
 #ifndef INCLUDE_PASTORSETYPES_H_
 #define INCLUDE_PASTORSETYPES_H_ 1
 
-#include "GLFW\glfw3.h"
 #include <stdint.h>
 
+/// Creates a Unique_PTR
+#define CREATE_UNIQUE_PTR(var1) std::unique_ptr<var1>(new var1());
+/// Creates a Shared_PTR
+#define CREATE_MAKE_SHARED_PTR(var1) std::shared_ptr<var1>(new var1())
 
 /// Remember: Signed allows negative values.
 
