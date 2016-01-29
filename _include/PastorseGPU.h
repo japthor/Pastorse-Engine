@@ -42,7 +42,9 @@ public:
 	void draw(uint32 *vao, uint32* ebo, uint32 *vbo_vertices_, uint32 *vbo_normales_, uint32 *vbo_UV_, uint32 *index);
 
 	/// Deletes the Buffers
-	void setColor(glm::vec3 color);
+	void setColor(glm::vec3 color, int32 option);
+
+	void setColorPV(glm::vec3 color, int32 option);
 
 	/// Deletes the Buffers
 	void delete_buffers(uint32 *vao, uint32 *vbo_vertices_, uint32 *vbo_normales_, uint32 *vbo_UV_, uint32 *ebo);
@@ -55,6 +57,9 @@ public:
 	/// Creates the OBJ
 	void loadOBJ(uint32 *vao, uint32 *vbo_vertices_, uint32 *vbo_normales_, uint32 *vbo_UV_, uint32 *ebo, uint32 *index, void* shapes);
 
+	void setTexturePruebaValidacion(uint32* texture);
+	void setColorPruebaValidacion(glm::vec3 color);
+	void drawPruebaValidacion(uint32 *vao, uint32* ebo, uint32 *vbo_vertices_, uint32 *vbo_normales_, uint32 *vbo_UV_, uint32 *index);
 
 private:
 	PastorseGPU();
@@ -62,6 +67,11 @@ private:
 	GLuint vertex_shader_;
 	GLuint fragment_shader_;
 	GLuint program_shader_;
+
+	GLuint vertex_shader_1;
+	GLuint fragment_shader_1;
+	GLuint program_shader_1;
+
 	GLint transformLoc_;
 	
 	GLint pos_attribute_;

@@ -18,6 +18,9 @@ public:
   * @param node_child The actor you want to make child.
   */
   void addChild(std::shared_ptr<PastorseNode> node_child);
+  void removeChild(std::shared_ptr<PastorseNode> node_child);
+  void removeChildren();
+  void removeParent();
 
   /**
   * Sets the node Position

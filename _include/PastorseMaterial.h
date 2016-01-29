@@ -21,7 +21,8 @@ public:
 	*
 	* @param color Color vector
 	*/
-	void setColor(glm::vec3 color);
+	void setColor(glm::vec3 color, int option);
+	void setColorPruebaVal(glm::vec3 color, int option);
 
 	/**
 	* Sets the material color
@@ -30,7 +31,7 @@ public:
 	* @param g G
 	* @param b B
 	*/
-	void setColor(float r, float g, float b);
+	void setColor(float r, float g, float b, int option);
 
 	/**
 	* Gives to the Material a Texture.
@@ -42,9 +43,13 @@ public:
 	/// Sets the Color and the Texure in the GPU (Don't use it)
 	void draw();
 
+
 private:
 	glm::vec3 color_;
+	glm::vec3 color_PruebaValidacion_;
+	uint32 texture_PruebaValidacion_;
 	uint32 texture_;
+	int32 option_;
 };
 
 #endif

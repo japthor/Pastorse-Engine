@@ -27,10 +27,21 @@ public:
 	/// Set's Z
 	void setZ(float32 z);
 
+
+	float32 getR();
+	float32 getT();
+
+	bool getSpace();
+	void setSpace(bool space);
+
 private:
 	float32 x_;
 	float32 y_;
 	float32 z_;
+
+	float32 r_;
+	float32 t_;
+	bool space_;
 
 };
 

@@ -33,12 +33,20 @@ GLchar* fragmentSource =
 "in vec3 direction; \n"
 "uniform sampler2D texture_;\n"
 "uniform vec3 color_;"
+"uniform vec3 color_PV;"
+"uniform int option_;"
 "out vec4 color;\n"
+"out int a;\n"
 "void main()\n"
 "{\n"
-"//vec2 new_texCoords = vec2(textCoords.x, 1.0 - textCoords.y);\n"
+"if(option_== 0){;\n"
 "float Intensity = dot(normalize(norm), normalize(direction)); \n"
-"color = vec4(color_ * vec3(Intensity), 1.0) * texture2D(texture_,textCoords);\n"
+"color = vec4(color_, 1.0) * texture2D(texture_,textCoords);\n"
+"};\n"
+"if(option_==1){;\n"
+"float Intensity = dot(normalize(norm), normalize(direction)); \n"
+"color = vec4(color_PV, 1.0) * texture2D(texture_,textCoords);\n"
+"};\n"
 "}\n";
 
 
@@ -119,6 +127,7 @@ void PastorseGPU::init(){
 		glGetProgramInfoLog(program_shader_,1024,&length_,info_log_);
 		printf("\nError: %s", info_log_);
 	}
+
 }
 
 void PastorseGPU::closeBuffer(){
@@ -385,11 +394,21 @@ void PastorseGPU::draw(uint32 *vao, uint32* ebo, uint32 *vbo_vertices_, uint32 *
 	closeBuffer();
 }
 
-void PastorseGPU::setColor(glm::vec3 color){
+void PastorseGPU::setColor(glm::vec3 color,int32 option){
 	int32 color_pos = glGetUniformLocation(program_shader_, "color_");
 	glUniform3f(color_pos, color.x, color.y, color.z);
-
+	int32 optionUse = glGetUniformLocation(program_shader_, "option_");
+	glUniform1i(optionUse, option);
 }
+
+void PastorseGPU::setColorPV(glm::vec3 color, int32 option){
+	int32 color_pos = glGetUniformLocation(program_shader_, "color_PV");
+	glUniform3f(color_pos, color.x, color.y, color.z);
+	int32 optionUse = glGetUniformLocation(program_shader_, "option_");
+	glUniform1i(optionUse, option);
+}
+
+
 
 void PastorseGPU::delete_buffers(uint32 *vao, uint32 *vbo_vertices_, uint32 *vbo_normales_, uint32 *vbo_UV_, uint32 *ebo){
 	glDeleteBuffers(1, ebo);
@@ -447,6 +466,11 @@ void PastorseGPU::loadOBJ(uint32 *vao, uint32 *vbo_vertices_, uint32 *vbo_normal
 	closeBuffer();
 
 }
+
+
+
+
+
 
 
 

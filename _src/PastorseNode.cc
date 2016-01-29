@@ -99,5 +99,29 @@ void PastorseNode::setParent(std::weak_ptr<PastorseNode> node_parent){
 	node_parent_ = node_parent;
 }
 
+void PastorseNode::removeParent(){
+  node_parent_.reset();
+}
+
+void PastorseNode::removeChild(std::shared_ptr<PastorseNode> node_child){
+  if (!node_children_.empty()){
+    for (uint32 i = 0; i <= node_children_.size(); i++){
+      if (node_children_[i] == node_child){
+        node_child->removeParent();
+        node_children_.erase(node_children_.begin() + i);
+      }
+    }
+  }
+}
+
+void PastorseNode::removeChildren(){
+  if (!node_children_.empty()){
+    for (uint32 i = 0; i <= node_children_.size(); i++){
+      node_children_[i]->removeParent();
+      node_children_.erase(node_children_.begin() + i);
+    }
+  }
+}
+
 
 

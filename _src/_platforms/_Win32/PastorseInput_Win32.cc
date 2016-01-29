@@ -5,6 +5,9 @@ PastorseInput::PastorseInput(){
 	x_ = 0.0f;
 	y_ = 0.0f;
 	z_ = 10.0f;
+	r_ = 0.0f;
+	t_ = 0.0f;
+	space_ = false;
 }
 
 void PastorseInput::keyInput(GLFWwindow* window){
@@ -32,6 +35,20 @@ void PastorseInput::keyInput(GLFWwindow* window){
 		z_ += 0.1f;
 	}
 
+	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS){
+		r_ += 0.1f;
+		t_ -= 0.1f;
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_T) == GLFW_PRESS){
+		t_ += 0.1f;
+		r_ -= 0.1f;
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS){
+		space_ = true;
+	}
+
 }
 
 float32 PastorseInput::getX(){
@@ -56,6 +73,22 @@ float32 PastorseInput::getZ(){
 
 void PastorseInput::setZ(float32 z){
 	z_ = z;
+}
+
+float32 PastorseInput::getR(){
+	return r_;
+}
+
+float32 PastorseInput::getT(){
+	return t_;
+}
+
+bool PastorseInput::getSpace(){
+	return space_;
+}
+
+void PastorseInput::setSpace(bool space){
+	space_ = space;
 }
 
 

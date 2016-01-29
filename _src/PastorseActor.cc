@@ -43,6 +43,8 @@ void PastorseActor::updateNode(std::shared_ptr<PastorseNode> node){
 	  std::shared_ptr<PastorseNode> parent = getParent().lock();
     // It's the world * the model, not the model * the world.
     setWorld( parent->getWorld() * model);
+    //setWorld( model * parent->getWorld());
+
   }
 }
 
@@ -56,7 +58,7 @@ void PastorseActor::loadOBJ(const char* obj_name){
 	}
 
 	geometry_->geometryOBJ(static_cast<void*>(&shapes[0]));
-	material_->setColor(mat[0].diffuse[0], mat[0].diffuse[1], mat[0].diffuse[2]);
+	material_->setColor(mat[0].diffuse[0], mat[0].diffuse[1], mat[0].diffuse[2],0);
 
 	std::string key("/");
 	std::string conver = obj_name;
