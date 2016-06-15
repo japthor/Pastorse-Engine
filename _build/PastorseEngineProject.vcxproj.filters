@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="_src">
+      <UniqueIdentifier>{CC1F937C-B856-940D-6143-7A104D59100F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_include">
+      <UniqueIdentifier>{A85B98C2-9428-F3CD-BD41-E175A96D285C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\_include\PastorseActor.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseCamera.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseEngine.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseFrameBuffer.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseGeometry.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseGPU.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseLight.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseMaterial.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseNode.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseRenderToTexture.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseShader.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseTexture.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseTypes.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_include\PastorseWindow.h">
+      <Filter>_include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\_src\PastorseActor.cc">
+      <Filter>_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseCamera.cc">
+      <Filter>_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseEngine.cc">
+      <Filter>_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseFrameBuffer.cc">
+      <Filter>_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseGeometry.cc">
+      <Filter>_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseGPU.cc">
+      <Filter>_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseLight.cc">
+      <Filter>_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseMaterial.cc">
+      <Filter>_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseNode.cc">
+      <Filter>_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseRenderToTexture.cc">
+      <Filter>_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseTexture.cc">
+      <Filter>_src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseWindow.cc">
+      <Filter>_src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

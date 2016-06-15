@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="_examples">
+      <UniqueIdentifier>{8308C861-EF72-7CD8-38B1-2D7EA45A5A2D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_examples\_Lua">
+      <UniqueIdentifier>{800B57A0-6CD9-4AA6-556D-BBCC41DA260B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\_examples\_Lua\main.cc">
+      <Filter>_examples\_Lua</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

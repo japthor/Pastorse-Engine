@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{830F8F59-EF7B-4A54-B86F-E2B1249B6CBC}</ProjectGuid>
+    <RootNamespace>PastorseEngineProject</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\Debug\PastorseEngineProject\</IntDir>
+    <TargetName>PastorseEngineProject_d</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\Release\PastorseEngineProject\</IntDir>
+    <TargetName>PastorseEngineProject</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\_include;..\_dependencies\glfw\include;..\_dependencies\glfw\src;..\_dependencies\glew\include;..\_dependencies\glm\glm;..\_dependencies\stb_image\include_src;..\_dependencies\tinyobjloader;..\_dependencies\lua-bridge\LuaBridge;..\_dependencies\lua-bridge\LuaBridge\detail;..\_dependencies\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;GLEW_NO_GLU;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)PastorseEngineProject_d.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>GLEW_STATIC;GLEW_NO_GLU;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\_include;..\_dependencies\glfw\include;..\_dependencies\glfw\src;..\_dependencies\glew\include;..\_dependencies\glm\glm;..\_dependencies\stb_image\include_src;..\_dependencies\tinyobjloader;..\_dependencies\lua-bridge\LuaBridge;..\_dependencies\lua-bridge\LuaBridge\detail;..\_dependencies\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)PastorseEngineProject_d.lib</OutputFile>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>..\_include;..\_dependencies\glfw\include;..\_dependencies\glfw\src;..\_dependencies\glew\include;..\_dependencies\glm\glm;..\_dependencies\stb_image\include_src;..\_dependencies\tinyobjloader;..\_dependencies\lua-bridge\LuaBridge;..\_dependencies\lua-bridge\LuaBridge\detail;..\_dependencies\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;GLEW_NO_GLU;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>GLEW_STATIC;GLEW_NO_GLU;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\_include;..\_dependencies\glfw\include;..\_dependencies\glfw\src;..\_dependencies\glew\include;..\_dependencies\glm\glm;..\_dependencies\stb_image\include_src;..\_dependencies\tinyobjloader;..\_dependencies\lua-bridge\LuaBridge;..\_dependencies\lua-bridge\LuaBridge\detail;..\_dependencies\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)PastorseEngineProject.lib</OutputFile>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\_include\PastorseActor.h" />
+    <ClInclude Include="..\_include\PastorseCamera.h" />
+    <ClInclude Include="..\_include\PastorseEngine.h" />
+    <ClInclude Include="..\_include\PastorseFrameBuffer.h" />
+    <ClInclude Include="..\_include\PastorseGeometry.h" />
+    <ClInclude Include="..\_include\PastorseGPU.h" />
+    <ClInclude Include="..\_include\PastorseLight.h" />
+    <ClInclude Include="..\_include\PastorseMaterial.h" />
+    <ClInclude Include="..\_include\PastorseNode.h" />
+    <ClInclude Include="..\_include\PastorseRenderToTexture.h" />
+    <ClInclude Include="..\_include\PastorseShader.h" />
+    <ClInclude Include="..\_include\PastorseTexture.h" />
+    <ClInclude Include="..\_include\PastorseTypes.h" />
+    <ClInclude Include="..\_include\PastorseWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\_src\PastorseActor.cc">
+      <ObjectFileName>$(IntDir)_src\PastorseActor.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseCamera.cc">
+      <ObjectFileName>$(IntDir)_src\PastorseCamera.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseEngine.cc">
+      <ObjectFileName>$(IntDir)_src\PastorseEngine.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseFrameBuffer.cc">
+      <ObjectFileName>$(IntDir)_src\PastorseFrameBuffer.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseGeometry.cc">
+      <ObjectFileName>$(IntDir)_src\PastorseGeometry.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseGPU.cc">
+      <ObjectFileName>$(IntDir)_src\PastorseGPU.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseLight.cc">
+      <ObjectFileName>$(IntDir)_src\PastorseLight.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseMaterial.cc">
+      <ObjectFileName>$(IntDir)_src\PastorseMaterial.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseNode.cc">
+      <ObjectFileName>$(IntDir)_src\PastorseNode.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseRenderToTexture.cc">
+      <ObjectFileName>$(IntDir)_src\PastorseRenderToTexture.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseTexture.cc">
+      <ObjectFileName>$(IntDir)_src\PastorseTexture.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_src\PastorseWindow.cc">
+      <ObjectFileName>$(IntDir)_src\PastorseWindow.obj</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

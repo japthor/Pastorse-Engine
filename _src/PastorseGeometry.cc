@@ -17,16 +17,16 @@ void PastorseGeometry::createCube(char8* name, float32 scale){
     name_ = name;
 }
 
-void PastorseGeometry::createPlane(float32 scale, float32 x, float32 y, float32 z){
+void PastorseGeometry::createPlane(float32 scale){
 	PastorseGPU* GPUInstance = nullptr;
 	GPUInstance = PastorseGPU::getInstance();
-	GPUInstance->createPlane(scale, &vao_, &vbo_vertices_, &vbo_normales_, &vbo_UV_, &ebo_, x, y, z);
+	GPUInstance->createPlane(scale, &vao_, &vbo_vertices_, &vbo_normales_, &vbo_UV_, &ebo_, &index_);
 }
 
-void PastorseGeometry::draw(glm::mat4 model){
+void PastorseGeometry::draw(glm::mat4 model, uint32 program){
 	PastorseGPU* GPUInstance = nullptr;
 	GPUInstance = PastorseGPU::getInstance();
-	GPUInstance->setTransformation(model);
+  GPUInstance->setTransformation(model, &program);
 	GPUInstance->draw(&vao_, &ebo_, &vbo_vertices_, &vbo_normales_, &vbo_UV_, &index_);
 }
 

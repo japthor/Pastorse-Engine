@@ -7,8 +7,7 @@
 class PastorseGeometry
 {
 public:
-	PastorseGeometry();
-	~PastorseGeometry(){};
+  ~PastorseGeometry(){ printf("eliminada geometria"); deleteBuffers(); };
 
 	/**
 	* Creates a Cube
@@ -23,14 +22,14 @@ public:
 	*
 	* @param scale The cube recieves a size
 	*/
-	void createPlane(float32 scale, float32 x, float32 y, float32 z);
+	void createPlane(float32 scale);
 
 	/**
 	* Calls to the geometry draw in the GPU (Don't use it)
 	*
 	* @param model Recieves the Model
 	*/
-	void draw(glm::mat4 model);
+  void draw(glm::mat4 model, uint32 program);
 
 	/**
 	* Calls to the geometry loadOBJ of the GPU (Don't use it)
@@ -39,17 +38,27 @@ public:
 	*/
 	void geometryOBJ(void *shapes);
 
+	///Deletes buffers
 	void deleteBuffers();
+  uint32 vao_;
+  uint32 ebo_;
+  uint32 index_;
 	
 private:
-	uint32 vao_;
-	uint32 ebo_;
+  friend class PastorseEngine;
+  friend class PastorseRenderToTexture;
+  PastorseGeometry(const PastorseGeometry&);
+  PastorseGeometry& operator= (const PastorseGeometry&);
+  PastorseGeometry();
+
+	
+  
 	uint32 vbo_UV_;
 	uint32 vbo_vertices_;
 	uint32 vbo_normales_;
-	uint32 index_;
+	
 	float32 size_;
-    char8* name_;
+  char8* name_;
 };
 
 #endif

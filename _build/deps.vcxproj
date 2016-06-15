@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F1A1957C-DDD8-960D-86C5-7C1072DB120F}</ProjectGuid>
+    <RootNamespace>deps</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\Debug\deps\</IntDir>
+    <TargetName>deps_d</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\Release\deps\</IntDir>
+    <TargetName>deps</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\_include;..\_dependencies\glfw\include;..\_dependencies\glfw\src;..\_dependencies\glew\include;..\_dependencies\glm\glm;..\_dependencies\stb_image\include_src;..\_dependencies\tinyobjloader;..\_dependencies\lua-bridge\LuaBridge;..\_dependencies\lua-bridge\LuaBridge\detail;..\_dependencies\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;GLEW_NO_GLU;_DEBUG;_GLFW_WIN32;_GLFW_USE_OPENGL;_GLFW_WGL;_GLFW_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)deps_d.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>GLEW_STATIC;GLEW_NO_GLU;_DEBUG;_GLFW_WIN32;_GLFW_USE_OPENGL;_GLFW_WGL;_GLFW_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\_include;..\_dependencies\glfw\include;..\_dependencies\glfw\src;..\_dependencies\glew\include;..\_dependencies\glm\glm;..\_dependencies\stb_image\include_src;..\_dependencies\tinyobjloader;..\_dependencies\lua-bridge\LuaBridge;..\_dependencies\lua-bridge\LuaBridge\detail;..\_dependencies\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)deps_d.lib</OutputFile>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>..\_include;..\_dependencies\glfw\include;..\_dependencies\glfw\src;..\_dependencies\glew\include;..\_dependencies\glm\glm;..\_dependencies\stb_image\include_src;..\_dependencies\tinyobjloader;..\_dependencies\lua-bridge\LuaBridge;..\_dependencies\lua-bridge\LuaBridge\detail;..\_dependencies\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;GLEW_NO_GLU;_GLFW_WIN32;_GLFW_USE_OPENGL;_GLFW_WGL;_GLFW_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>GLEW_STATIC;GLEW_NO_GLU;_GLFW_WIN32;_GLFW_USE_OPENGL;_GLFW_WGL;_GLFW_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\_include;..\_dependencies\glfw\include;..\_dependencies\glfw\src;..\_dependencies\glew\include;..\_dependencies\glm\glm;..\_dependencies\stb_image\include_src;..\_dependencies\tinyobjloader;..\_dependencies\lua-bridge\LuaBridge;..\_dependencies\lua-bridge\LuaBridge\detail;..\_dependencies\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  <Lib>
+    <OutputFile>$(OutDir)deps.lib</OutputFile>
+  </Lib>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\_dependencies\glfw\src\context.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\context.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\egl_context.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\egl_context.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\glx_context.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\glx_context.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\init.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\init.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\input.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\input.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\linux_joystick.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\linux_joystick.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\mach_time.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\mach_time.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\mir_init.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\mir_init.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\mir_monitor.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\mir_monitor.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\mir_window.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\mir_window.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\monitor.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\monitor.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\posix_time.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\posix_time.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\posix_tls.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\posix_tls.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\wgl_context.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\wgl_context.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\win32_init.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\win32_init.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\win32_monitor.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\win32_monitor.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\win32_time.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\win32_time.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\win32_tls.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\win32_tls.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\win32_window.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\win32_window.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\window.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\window.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\winmm_joystick.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\winmm_joystick.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\wl_init.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\wl_init.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\wl_monitor.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\wl_monitor.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\wl_window.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\wl_window.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\x11_init.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\x11_init.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\x11_monitor.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\x11_monitor.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\x11_window.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\x11_window.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glfw\src\xkb_unicode.c">
+      <ObjectFileName>$(IntDir)_dependencies\glfw\src\xkb_unicode.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\glew\src\glew.c">
+      <ObjectFileName>$(IntDir)_dependencies\glew\src\glew.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\stb_image\include_src\stb_vorbis.c">
+      <ObjectFileName>$(IntDir)_dependencies\stb_image\include_src\stb_vorbis.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\tinyobjloader\test.cc">
+      <ObjectFileName>$(IntDir)_dependencies\tinyobjloader\test.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\tinyobjloader\tiny_obj_loader.cc">
+      <ObjectFileName>$(IntDir)_dependencies\tinyobjloader\tiny_obj_loader.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\tinyobjloader\examples\obj_sticher\obj_sticher.cc">
+      <ObjectFileName>$(IntDir)_dependencies\tinyobjloader\examples\obj_sticher\obj_sticher.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\tinyobjloader\examples\obj_sticher\obj_writer.cc">
+      <ObjectFileName>$(IntDir)_dependencies\tinyobjloader\examples\obj_sticher\obj_writer.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lapi.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lapi.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lauxlib.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lauxlib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lbaselib.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lbaselib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lbitlib.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lbitlib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lcode.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lcode.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lcorolib.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lcorolib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lctype.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lctype.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\ldblib.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\ldblib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\ldebug.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\ldebug.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\ldo.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\ldo.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\ldump.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\ldump.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lfunc.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lfunc.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lgc.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lgc.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\linit.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\linit.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\liolib.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\liolib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\llex.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\llex.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lmathlib.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lmathlib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lmem.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lmem.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\loadlib.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\loadlib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lobject.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lobject.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lopcodes.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lopcodes.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\loslib.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\loslib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lparser.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lparser.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lstate.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lstate.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lstring.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lstring.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lstrlib.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lstrlib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\ltable.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\ltable.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\ltablib.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\ltablib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\ltm.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\ltm.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lua.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lua.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\luac.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\luac.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lundump.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lundump.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lutf8lib.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lutf8lib.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lvm.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lvm.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\_dependencies\lua\lzio.c">
+      <ObjectFileName>$(IntDir)_dependencies\lua\lzio.obj</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\_dependencies\glm\glm\detail\func_common.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\func_exponential.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\func_geometric.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\func_integer.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\func_matrix.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\func_packing.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\func_trigonometric.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\func_vector_relational.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\intrinsic_common.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\intrinsic_exponential.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\intrinsic_geometric.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\intrinsic_integer.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\intrinsic_matrix.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\intrinsic_trigonometric.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\intrinsic_vector_relational.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_gentype.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_half.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_mat.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_mat2x2.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_mat2x3.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_mat2x4.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_mat3x2.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_mat3x3.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_mat3x4.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_mat4x2.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_mat4x3.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_mat4x4.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_vec.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_vec1.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_vec2.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_vec3.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_vec4.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_vec4_avx.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_vec4_avx2.inl" />
+    <None Include="..\_dependencies\glm\glm\detail\type_vec4_sse2.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\bitfield.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\color_space.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\constants.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\epsilon.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\integer.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\matrix_access.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\matrix_inverse.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\matrix_transform.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\noise.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\packing.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\quaternion.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\random.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\reciprocal.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\round.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\type_precision.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\type_ptr.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\ulp.inl" />
+    <None Include="..\_dependencies\glm\glm\gtc\vec1.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\associated_min_max.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\bit.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\closest_point.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\color_space.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\color_space_YCoCg.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\common.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\compatibility.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\component_wise.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\dual_quaternion.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\euler_angles.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\extend.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\extented_min_max.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\fast_exponential.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\fast_square_root.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\fast_trigonometry.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\gradient_paint.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\handed_coordinate_space.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\hash.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\integer.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\intersect.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\io.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\log_base.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\matrix_cross_product.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\matrix_decompose.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\matrix_interpolation.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\matrix_major_storage.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\matrix_operation.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\matrix_query.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\matrix_transform_2d.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\mixed_product.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\norm.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\normal.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\normalize_dot.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\number_precision.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\optimum_pow.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\orthonormalize.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\perpendicular.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\polar_coordinates.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\projection.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\quaternion.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\raw_data.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\rotate_normalized_axis.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\rotate_vector.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\scalar_relational.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\simd_mat4.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\simd_quat.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\simd_vec4.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\spline.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\std_based_type.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\string_cast.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\transform.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\transform2.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\type_aligned.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\vector_angle.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\vector_query.inl" />
+    <None Include="..\_dependencies\glm\glm\gtx\wrap.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

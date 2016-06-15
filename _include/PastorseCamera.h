@@ -11,7 +11,6 @@
 class PastorseCamera
 {
 public:
-	PastorseCamera();
 	~PastorseCamera(){};
 
 	/**
@@ -32,21 +31,23 @@ public:
 	* @param zfar Far distance of the camera
 	*/
 	void setLookProjection(float32 fov, float32 aspect_ratio, float32 znear, float32 zfar);
+  void setOrthoProjection(float32 znear, float32 zfar);
 
-	/**
-	* Calls to draw the camera in the GPU (Don't call it).
-	*
-	* @param program Recieves a program
-	*/
-	void draw(int32 program);
+  glm::mat4 getProjection();
+  glm::mat4 getView();
+  glm::vec3 getCameraPosition();
 
 
 private:
 	PastorseCamera(const PastorseCamera&);
 	PastorseCamera& operator= (const PastorseCamera&);
+  PastorseCamera();
+
+  friend class PastorseEngine;
 
 	glm::mat4 projection_;
 	glm::mat4 view_;
+	glm::vec3 position_;
 
 
 };

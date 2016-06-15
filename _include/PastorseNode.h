@@ -10,16 +10,25 @@ class PastorseNode : std::enable_shared_from_this<PastorseNode>
 {
 public:
 	PastorseNode();
-	~PastorseNode(){};
 
   /**
-  * Creates a Child
+  * Adds a Child
   *
   * @param node_child The actor you want to make child.
   */
   void addChild(std::shared_ptr<PastorseNode> node_child);
+
+  /**
+  * removes a Child
+  *
+  * @param node_child The actor you want to remove from.
+  */
   void removeChild(std::shared_ptr<PastorseNode> node_child);
+
+  ///removes children
   void removeChildren();
+
+  ///removes the parent
   void removeParent();
 
   /**
@@ -99,6 +108,7 @@ public:
 
 
 protected:
+  virtual ~PastorseNode(){};
   void setWorld(glm::mat4 world);
 
   std::weak_ptr<PastorseNode> getParent();

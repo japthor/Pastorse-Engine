@@ -1,0 +1,29 @@
+﻿Build started 28/04/2016 16:15:43.
+     1>Project "C:\Users\pastorse\Desktop\grafica\pastorse_ultra_engine_12\_build\_Render_to_Texture_1_cube.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\_include /I..\_dependencies\glfw\include /I..\_dependencies\glfw\src /I..\_dependencies\glew\include /I..\_dependencies\glm\glm /I..\_dependencies\stb_image\include_src /I..\_dependencies\tinyobjloader /I"..\_dependencies\lua-bridge\LuaBridge" /I"..\_dependencies\lua-bridge\LuaBridge\detail" /I..\_dependencies\lua /ZI /nologo /W3 /WX- /MP /Od /Oy- /D GLEW_STATIC /D GLEW_NO_GLU /D _DEBUG /Gm- /EHsc /RTC1 /MDd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\Debug\_Render_to_Texture_1_cube\_examples\_Render_to_Texture\main.obj" /Fd"bin\_Render_to_Texture_1_cube_d.pdb" /Gd /TP /analyze- /errorReport:prompt   ..\_examples\_Render_to_Texture\main.cc
+         main.cc
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(45): warning C4244: 'argument' : conversion from 'int' to 'float32', possible loss of data
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(143): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(174): warning C4244: 'argument' : conversion from 'lua_Number' to 'float', possible loss of data
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(185): warning C4244: 'argument' : conversion from 'lua_Number' to 'float', possible loss of data
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(196): warning C4244: 'argument' : conversion from 'lua_Number' to 'float', possible loss of data
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(207): warning C4244: 'argument' : conversion from 'lua_Number' to 'float', possible loss of data
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(218): warning C4244: 'argument' : conversion from 'lua_Number' to 'float', possible loss of data
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(230): warning C4244: 'argument' : conversion from 'lua_Number' to 'float', possible loss of data
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(237): warning C4244: 'argument' : conversion from 'lua_Number' to 'float', possible loss of data
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(246): warning C4244: 'argument' : conversion from 'lua_Number' to 'float', possible loss of data
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(254): warning C4244: 'argument' : conversion from 'lua_Number' to 'float', possible loss of data
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(262): warning C4244: 'argument' : conversion from 'lua_Number' to 'float', possible loss of data
+     1>c:\users\pastorse\desktop\grafica\pastorse_ultra_engine_12\_examples\_render_to_texture\main.cc(270): warning C4244: 'argument' : conversion from 'lua_Number' to 'float', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\_Render_to_Texture_1_cube_d.exe" /INCREMENTAL /NOLOGO opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"bin\_Render_to_Texture_1_cube_d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"bin\_Render_to_Texture_1_cube_d.lib" /MACHINE:X86 obj\Debug\_Render_to_Texture_1_cube\_examples\_Render_to_Texture\main.obj
+         C:\Users\pastorse\Desktop\grafica\pastorse_ultra_engine_12\_build\bin\deps_d.lib
+         C:\Users\pastorse\Desktop\grafica\pastorse_ultra_engine_12\_build\bin\platform_Win32_d.lib
+         C:\Users\pastorse\Desktop\grafica\pastorse_ultra_engine_12\_build\bin\PastorseEngineProject_d.lib
+         _Render_to_Texture_1_cube.vcxproj -> C:\Users\pastorse\Desktop\grafica\pastorse_ultra_engine_12\_build\bin\_Render_to_Texture_1_cube_d.exe
+     1>Done Building Project "C:\Users\pastorse\Desktop\grafica\pastorse_ultra_engine_12\_build\_Render_to_Texture_1_cube.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.11

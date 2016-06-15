@@ -10,7 +10,10 @@ includedirs { 	"_include",
 		"_dependencies/glew/include",
 		"_dependencies/glm/glm",
 		"_dependencies/stb_image/include_src",
-		"_dependencies/tinyobjloader/"
+		"_dependencies/tinyobjloader/",
+		"_dependencies/lua-bridge/LuaBridge",
+		"_dependencies/lua-bridge/LuaBridge/detail",
+		"_dependencies/lua/"
 	    }
 		
 defines {"GLEW_STATIC", "GLEW_NO_GLU"}
@@ -22,36 +25,16 @@ configuration "Debug"
     
 configuration "Release"
 flags { "Optimize" }
-  
-project "_examples"
+
+
+project "_examples_Shadows"
 kind "ConsoleApp"
-files{"_examples/_Test1/**.cc"}
+files{"_examples/_Shadows/**.cc"}
 links{ "opengl32","deps", "platform_Win32", "PastorseEngineProject"}
 
-project "_examples_puntero"
+project "_demo"
 kind "ConsoleApp"
-files{"_examples/_TestPuntero/**.cc"}
-links{ "opengl32","deps", "platform_Win32", "PastorseEngineProject"}
-
-project "_examples_camera"
-kind "ConsoleApp"
-files{"_examples/_TestCamera/**.cc"}
-links{ "opengl32","deps", "platform_Win32", "PastorseEngineProject"}
-
-project "_examples_IntelligentPointers"
-kind "ConsoleApp"
-files{"_examples/_IntelligentPointers/**.cc"}
-links{ "opengl32","deps", "platform_Win32", "PastorseEngineProject"}
-
-
-project "_examples_Engine"
-kind "ConsoleApp"
-files{"_examples/_Engine/**.cc"}
-links{ "opengl32","deps", "platform_Win32", "PastorseEngineProject"}
-
-project "_examples_Scene_Engine"
-kind "ConsoleApp"
-files{"_examples/_Scene_Engine/**.cc"}
+files{"_examples/_demo/**.cc"}
 links{ "opengl32","deps", "platform_Win32", "PastorseEngineProject"}
   
 project "PastorseEngineProject"
@@ -90,6 +73,7 @@ files {"_dependencies/glew/src/glew.c"}
 files {"_dependencies/glm/glm/**.inl"}
 files {"_dependencies/stb_image/include_src/**.c"}
 files {"_dependencies/tinyobjloader/**.cc"}
+files {"_dependencies/lua/**.c"}
  
 
 

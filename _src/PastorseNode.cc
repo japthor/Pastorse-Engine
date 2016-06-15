@@ -16,8 +16,23 @@ PastorseNode::PastorseNode(){
 }
 
 void PastorseNode::addChild(std::shared_ptr<PastorseNode> node_child){
-	node_children_.push_back(node_child);
-	node_child->setParent(returnMyself());
+
+  if (node_children_.empty()){
+    node_children_.push_back(node_child);
+    node_child->setParent(returnMyself());
+  }
+  else{
+    int8 found = false;
+    for (uint32 i = 0; i < node_children_.size(); i++){
+      if (node_children_[i] == node_child){
+        found = true;
+      }
+    }
+    if (!found){
+      node_children_.push_back(node_child);
+      node_child->setParent(returnMyself());
+    }
+  }
 }
 
 
@@ -44,7 +59,7 @@ glm::vec3 PastorseNode::getRotation(){
 void PastorseNode::setScale(float32 x, float32 y, float32 z){
 	scale_ = glm::vec3(x, y, z);
 	scale_matrix_ = glm::scale(glm::mat4(1.0f), scale_);
-  model_ *= scale_matrix_;
+    model_ *= scale_matrix_;
 }
 
 glm::vec3 PastorseNode::getScale(){

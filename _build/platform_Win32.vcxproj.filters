@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="_src">
+      <UniqueIdentifier>{CC1F937C-B856-940D-6143-7A104D59100F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_src\_platforms">
+      <UniqueIdentifier>{3F694065-ABF4-AD29-B405-311E20100A2A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_src\_platforms\_Win32">
+      <UniqueIdentifier>{CD57ADAF-B951-D601-A2BE-6C128E573C6E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\_src\_platforms\_Win32\PastorseWindow_Win32.cc">
+      <Filter>_src\_platforms\_Win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
